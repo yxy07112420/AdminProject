@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#adminAll{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/adminSingInBackground .jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table{
+    margin-left: 400px;
+    margin-top: 20px;
+}
+.td1{
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
+    color: aliceblue;
+    font-size: 20px;
+}
+.td2{
+    height:40px;
+    width: 300px;
+}
+.td2 input{
+    height: 40px;
+    width: 300px;
+}
+#shopType{
+    width: 100px;
+    height: 40px;
+}
+#submit input{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 100px;
+}
+#submit input:hover{
+    background-color: aliceblue;
+    color: chocolate;
+    cursor: pointer;
+}

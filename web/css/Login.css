@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+}
+#login{
+    width: 400px;
+    height: 400px;
+    background-color: #666666;
+    position: fixed;
+    margin-left: 470px;
+    margin-top: 100px;
+    box-shadow: 5px 5px 3px #999999 ;
+}
+h1{
+    text-align: center;
+    padding-top: 10px;
+}
+#center{
+    padding-left: 65px;
+    padding-top: 65px;
+}
+.divs{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    font-family: "Adobe 仿宋 Std R";
+}
+#submit{
+    width: 200px;
+    height: 50px;
+}
+#submit input{
+    width: 300px;
+    height: 30px;
+    margin-top: 50px;
+    background-color: #336666;
+    border: none;
+}
+#submit input:hover{
+    background-color: lightseagreen;
+    color: white;
+    cursor: pointer;
+}
+#bottom{
+    display: flex;
+    flex-direction: row;
+}
+.bottoms{
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    margin-left: 8px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.bottoms img{
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+}
+.bottoms:hover{
+    font-size: 15px;
+    cursor: pointer;
+}
