@@ -1,17 +1,17 @@
 $(function () {
+    console.log("用户名："+$("#username").val());
     //设置一个方法
     function geterror(reg,errortext,val,usTrue){
         if(reg.test(val)){
             usTrue = true;
         }else{
-            $(this).parents("td").next.html("<span style='color: red'><%=errortext%></span>");
+            $(this).parents("td").next().text(errortext);
             usTrue=false;
         }
     }
     var nameistrue = false;
     //对商品名进行正则表达式的验证
     $("#shopName").blur(function () {
-        console.log("用户名为："+$(this).val());
         var re = /^([a-zA-Z0-9]){1,10}$/;
         geterror(re,"商品名格式有误，请输入1-10位的数字和字母",$(this).val(),nameistrue);
     })

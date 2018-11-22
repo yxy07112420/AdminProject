@@ -31,6 +31,18 @@
                   <td><input type="password" id="password" name="password"/></td>
                   <td></td>
                 </tr>
+                <tr>
+                  <td colspan="3" style="color: red">
+                    <%
+                      System.out.println(request.getAttribute("massrgs"));
+                      if(request.getAttribute("massrgs")!=null){
+                    %>
+                       <%=request.getAttribute("massrgs")%>
+                    <%
+                      }
+                    %>
+                  </td>
+                </tr>
               </table>
               <div id="submit">
                 <input type="submit" value="登录"/>
@@ -53,7 +65,7 @@
               </div>
             </a>
           </div>
-        </div>
+      </div>
       </div>
   </body>
 </html>

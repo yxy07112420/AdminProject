@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.neuedu.ClassDemo.Shops" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
@@ -22,91 +24,34 @@
 				<th>修改日期</th>
 				<th>相关操作</th>
 			</tr>
-			<tr>
-				<td >001</td>
-				<td>鼠标1</td>
-				<td>计算机</td>
-				<td>冰狐</td>
-				<td>2018-07-20</td>
-				<td>26.5</td>
-				<td>300</td>
-				<td>200</td>
-				<td><img src="img/logo.png" class="shopImg"></td>
-				<td>鼠标，静音，无线</td>
-				<td>2018-08-20</td>
-				<td class="imgs">
-					<a href="updateShops.jsp#update_conter"><img src="img/wirte.svg" title="修改" class="update"/></a>
-					<img src="img/delete.svg" title="删除" class="delete"/>
-				</td>
-			</tr>
-			<tr>
-				<td height="30px">002</td>
-				<td>鼠标1</td>
-				<td>计算机</td>
-				<td>冰狐</td>
-				<td>2018-07-20</td>
-				<td>26.5</td>
-				<td>300</td>
-				<td>200</td>
-				<td><img src="img/logo.png" class="shopImg"></td>
-				<td>鼠标，静音，无线</td>
-				<td>2018-08-20</td>
-				<td class="imgs">
-					<a href="updateShops.jsp#update_conter"><img src="img/wirte.svg" title="修改" class="update"/></a>
-					<img src="img/delete.svg" title="删除" class="delete"/>
-				</td>
-			</tr>
-			<tr>
-				<td height="30px">003</td>
-				<td>鼠标1</td>
-				<td>计算机</td>
-				<td>冰狐</td>
-				<td>2018-07-20</td>
-				<td>26.5</td>
-				<td>300</td>
-				<td>200</td>
-				<td><img src="img/logo.png" class="shopImg"></td>
-				<td>鼠标，静音，无线</td>
-				<td>2018-08-20</td>
-				<td class="imgs">
-					<a href="updateShops.jsp#update_conter"><img src="img/wirte.svg" title="修改" class="update"/></a>
-					<img src="img/delete.svg" title="删除" class="delete"/>
-				</td>
-			</tr>
-			<tr>
-				<td height="30px">004</td>
-				<td>鼠标1</td>
-				<td>计算机</td>
-				<td>冰狐</td>
-				<td>2018-07-20</td>
-				<td>26.5</td>
-				<td>300</td>
-				<td>200</td>
-				<td><img src="img/logo.png" class="shopImg"></td>
-				<td>鼠标，静音，无线</td>
-				<td>2018-08-20</td>
-				<td class="imgs">
-					<a href="updateShops.jsp#update_conter"><img src="img/wirte.svg" title="修改" class="update"/></a>
-					<img src="img/delete.svg" title="删除" class="delete"/>
-				</td>
-			</tr>
-			<tr>
-				<td height="30px">005</td>
-				<td>鼠标1</td>
-				<td>计算机</td>
-				<td>冰狐</td>
-				<td>2018-07-20</td>
-				<td>26.5</td>
-				<td>300</td>
-				<td>200</td>
-				<td><img src="img/logo.png" class="shopImg"></td>
-				<td>鼠标，静音，无线</td>
-				<td>2018-08-20</td>
-				<td class="imgs">
-					<a href="updateShops.jsp#update_conter"><img src="img/wirte.svg" title="修改" class="update"/></a>
-					<img src="img/delete.svg" title="删除" class="delete"/>
-				</td>
-			</tr>
+			<%
+                Object selectShops = request.getAttribute("selectShops");
+                if(selectShops instanceof List){
+                    List<Shops> shops = (List<Shops>)selectShops;
+                    for (Shops shop: shops) {
+                        System.out.println("商品的详细信息："+shop);
+            %>
+                    <tr>
+                        <td><%=shop.getShopId()%></td>
+                        <td><%=shop.getShopName()%></td>
+                        <td><%=shop.getShopStyle()%></td>
+                        <td><%=shop.getShopType()%></td>
+                        <td class="times"><%=shop.getShopTime()%></td>
+                        <td><%=shop.getShopMoney()%></td>
+                        <td><%=shop.getShopNumber()%></td>
+                        <td><%=shop.getShopSellNumber()%></td>
+                        <td><img src="http://localhost:8080/imgs/<%=shop.getShopImages()%>" class="shopImg"></td>
+                        <td><%=shop.getShopDescribe()%></td>
+                        <td class="times"><%=shop.getShopCheckTime()%></td>
+                        <td class="imgs">
+                            <a href="singoShopServlet?updateConter=<%=shop.getShopId()%>"><img src="img/wirte.svg" title="修改" class="update"/></a>
+                            <a href="DeleteShopsServlet?deleteConter=<%=shop.getShopId()%>"><img src="img/delete.svg" title="删除" class="delete"/></a>
+                        </td>
+                    </tr>
+            <%
+                    }
+                }
+            %>
 		</table>
 	</body>
 </html>

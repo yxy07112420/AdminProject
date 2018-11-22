@@ -6,9 +6,7 @@ $(function () {
         $(".delete").each(function () {
             $(this).click(function () {
                 if(confirm("确定要删除吗？")){
-                    $(this).parents("tr").remove();
-                    alert("删除成功");
-                    return true;
+                    return;
                 }
                 return false;
             })

@@ -31,7 +31,7 @@
 								<span>商品信息管理</span>
 							</div>
 							<div class="infors_conter">
-								<div><a href="selectShops.jsp" target="jumpGo">商品查询</a></div>
+								<div><a href="selectShops" target="jumpGo">商品查询</a></div>
 								<div><a href="insertShops.jsp" target="jumpGo">新增商品</a></div>
 								<div><a href="updateShops.jsp" target="jumpGo">修改商品信息</a></div>
 							</div>

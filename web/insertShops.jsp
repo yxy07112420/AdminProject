@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="insert">
-        <form action="insertShops.jsp" method="get">
+        <form action="insertShops.jsp" method="post">
             <table>
                 <tr>
                     <td width="130px"><span>商品名：</span></td>

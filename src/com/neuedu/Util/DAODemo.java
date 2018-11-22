@@ -2,7 +2,7 @@ package com.neuedu.Util;
 
 import java.sql.*;
 
-public class Users {
+public class DAODemo {
     static {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -85,28 +85,5 @@ public class Users {
             closeIo(conn,ps,null);
         }
         return 0;
-    }
-    //执行sql语句
-    public static boolean addIsExists(String username,String userId,String telphone,String shopName){
-        //获取数据库连接
-        Connection conn = getConn();
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        try {
-            ps = conn.prepareStatement("select * from AdminUsers where username = ? or userId = ? or telphone = ? or shopName = ? ");
-            ps.setString(1,username);
-            ps.setString(2,userId);
-            ps.setString(3,telphone);
-            ps.setString(4,shopName);
-            rs = ps.executeQuery();
-            if(rs.next()){
-                return true;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            closeIo(conn,ps,rs);
-        }
-        return false;
     }
 }
